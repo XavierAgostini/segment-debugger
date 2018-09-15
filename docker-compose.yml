@@ -1,0 +1,14 @@
+redis:
+  image: redis
+  ports:
+    - "6379:6379"
+
+stream:
+  image: segment/fake-event-stream
+  environment:
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+    - REDIS_CHANNEL=events
+    - EVENTS_PER_SECOND=100
+  links:
+    - redis
