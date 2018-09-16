@@ -1,4 +1,6 @@
 import React from 'react'
+import DetailsPane from './DetailsPane'
+import ListPane from './ListPane'
 
 export default class DebuggerApp extends React.Component {
   state = {
@@ -9,7 +11,10 @@ export default class DebuggerApp extends React.Component {
   }
   render() {
     return (
-      <div>Segment Debugger</div>
+      <div>
+        <ListPane/>
+        {/*<DetailsPane/>*/}
+      </div>
     )
   }
 }
