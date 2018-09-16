@@ -17,7 +17,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
-    "evergreen-ui": "^3.2.7",
+    "evergreen-ui": "^4.0.0-39",
     "express": "^4.16.3",
     "moment": "^2.22.2",
     "react": "^16.5.1",
