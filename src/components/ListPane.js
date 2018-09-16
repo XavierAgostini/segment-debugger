@@ -6,7 +6,7 @@ export default class ListPane extends React.Component {
   render() {
     return (
       <div>
-        <ListControlBar/>
+        <ListControlBar handlePauseChange={this.props.handlePauseChange} handleSearchFilter={this.props.handleSearchFilter}/>
         <EventList events={this.props.events}/>
       </div>
     )

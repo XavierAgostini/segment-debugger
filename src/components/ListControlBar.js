@@ -31,6 +31,15 @@ export default class ListControlBar extends React.Component {
     ],
     value: 'live'
   }
+  handleButtonChange = (value) => {``
+    this.setState({ value })
+    const isPaused = this.state.value === 'live'
+    this.props.handlePauseChange(isPaused)
+  }
+  handleSearchChange = (e) => {
+    const val = e.target.value
+    this.props.handleSearchFilter(val)
+  }
 
   render() {
     return (
@@ -39,12 +48,14 @@ export default class ListControlBar extends React.Component {
           width={240}
           options={this.state.options}
           value={this.state.value}
-          onChange={value => this.setState({ value })}
+          onChange={value => this.handleButtonChange(value)}
         />
         <SearchInput
+          name="searchBox"
           marginX='16px'
           placeholder='Type to search...'
           width='280px'
+          onChange={this.handleSearchChange}
         />
         <Button
         alignItems='center'

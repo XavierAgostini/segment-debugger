@@ -3,24 +3,12 @@ import Event from './Event'
 import { Pane } from 'evergreen-ui'
 
 const listStyle = {
-  height:'500px'
+  height:'500px',
+  overflow: 'auto'
 }
 export default class EventList extends React.Component {
-  state = {
-    events1: [{
-      type: 'Track',
-      event: 'Order Completed',
-      timestamp: new Date().getTime()
-    }, {
-      type: 'Track',
-      event: 'Product Added',
-      timestamp: new Date().getTime()
-    }, {
-      type: 'Track',
-      event: 'Product List Viewed',
-      timestamp: new Date().getTime()
-    }
-  ]
+  componentDidMount() {
+    console.log(this.props.events)
   }
   render() {
     return (
@@ -28,12 +16,10 @@ export default class EventList extends React.Component {
         <Pane>
           {
             this.props.events.map((event, index) => (
-              <Event key={index} event={event}/>
+              <Event key={JSON.stringify(event)} event={event}/>
             ))
           }
         </Pane>
-        
-     
       </div>
     )
   }

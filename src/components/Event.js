@@ -52,7 +52,6 @@ const getEventName = (event) => {
     return event.event
   }
   if (event.type === 'page' || event.type === 'screen') {
-    console.log('page', event.name)
     return event.properties.name || event.properties.path
   }
   if (event.type === 'identify') {
@@ -68,12 +67,11 @@ export default class Event extends React.Component {
   componentDidMount() {
     try {
       this.setState(() => ({
-        event: JSON.parse(this.props.event)
+        event: this.props.event
       }))
     } catch (e) {
       console.log('caught_error',e)
-    }
-    
+    } 
   }
   render() {
     return (
