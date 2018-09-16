@@ -24,15 +24,19 @@ app.get('/debugger-stream', (req, res) => {
     // might want to add some sampling rate to this
     subscriber.on('message', (channel, message) => {
       messageCount++
-      res.write(`id: ${messageCount}\n`)
-      res.write('type: ${channel}\n')
-      res.write(`data: ${message}\n\n`)
+      if (messageCount%100===0) {
+        res.write(`id: ${messageCount}\n`)
+        res.write('type: ${channel}\n')
+        res.write(`data: ${message}\n\n`)
+      }
     })
 
     res.writeHead(200, {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache',
-      'Connection': 'keep-alive'
+      'Connection': 'keep-alive',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'X-Requested-With'
     })
     res.write('\n')
 

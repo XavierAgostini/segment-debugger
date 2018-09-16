@@ -7,6 +7,10 @@ const spanStyle1= {
 const spanStyle2 = {
   color: 'rgb(149, 65, 33)'
 }
+
+const preStyle = {
+  overflow: 'hidden'
+}
 const prettyEvent = (event) =>  {
   var eventJSON = JSON.parse(event)
   var string = `analytics.${eventJSON.type}('${eventJSON.event}', \{\n`
@@ -31,7 +35,7 @@ export default class CodeBox extends React.Component {
           minHeight='min-content'
         >
           <div>
-            <pre>
+            <pre style={preStyle}>
               <code>
                 {this.props.view && rawEvent(this.props.event)}
                 {!this.props.view && prettyEvent(this.props.event)}

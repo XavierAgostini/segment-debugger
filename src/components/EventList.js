@@ -7,7 +7,7 @@ const listStyle = {
 }
 export default class EventList extends React.Component {
   state = {
-    events: [{
+    events1: [{
       type: 'Track',
       event: 'Order Completed',
       timestamp: new Date().getTime()
@@ -20,7 +20,6 @@ export default class EventList extends React.Component {
       event: 'Product List Viewed',
       timestamp: new Date().getTime()
     }
-  
   ]
   }
   render() {
@@ -28,7 +27,7 @@ export default class EventList extends React.Component {
       <div style={listStyle}>
         <Pane>
           {
-            this.state.events.map((event, index) => (
+            this.props.events.map((event, index) => (
               <Event key={index} event={event}/>
             ))
           }

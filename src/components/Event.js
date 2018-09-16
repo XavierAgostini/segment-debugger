@@ -47,20 +47,47 @@ const timestampStyle = {
   minWidth: '144px',
   textAlign: 'right'
 }
+const getEventName = (event) => {
+  if (event.type === 'track') {
+    return event.event
+  }
+  if (event.type === 'page' || event.type === 'screen') {
+    console.log('page', event.name)
+    return event.properties.name || event.properties.path
+  }
+  if (event.type === 'identify') {
+    return event.userId || event.anonymousId
+  }
+  if (event.type === 'group') return event.groupId
+}
 export default class Event extends React.Component {
+  state = {
+    event: {}
+  }
+
+  componentDidMount() {
+    try {
+      this.setState(() => ({
+        event: JSON.parse(this.props.event)
+      }))
+    } catch (e) {
+      console.log('caught_error',e)
+    }
+    
+  }
   render() {
     return (
       <button style={buttonStyle}>
-        <CheckCircleIcon fill="#016cd1"/>
+        {/*<CheckCircleIcon fill="#016cd1"/>*/}
         <div style={typeStyle}>
-          {this.props.event.type}
+          {this.state.event.type}
         </div>
         <div style={eventStyle}>
-          {this.props.event.event}
+          {getEventName(this.state.event)}
         </div>
         <div style={timestampStyle}>
-          {moment(this.props.event.timestamp).format('YYYY/MM/DD HH:mm:ss')}
-        </div>
+          {moment(this.state.event.receivedAt).format('YYYY/MM/DD HH:mm:ss')}
+    </div>
       </button>
     )
   }

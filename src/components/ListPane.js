@@ -7,7 +7,7 @@ export default class ListPane extends React.Component {
     return (
       <div>
         <ListControlBar/>
-        <EventList/>
+        <EventList events={this.props.events}/>
       </div>
     )
   }
