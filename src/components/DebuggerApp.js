@@ -21,7 +21,7 @@ export default class DebuggerApp extends React.Component {
   }
   state = {
     isPaused: false,
-    selectedEvent: '',
+    selectedEvent: undefined,
     events: [],
     filteredEvents: [],
     searchText: ''
@@ -42,8 +42,13 @@ export default class DebuggerApp extends React.Component {
   }
 
   handleSearchFilter = (searchText) => {
+    console.log('handleSearchFilter')
     this.setState(()=>({ searchText }))
-    
+  }
+
+  handleEventSelected = (event) => {
+    console.log('handleEventSelected')
+    this.setState(()=>({ selectedEvent: event }))
   }
 
   render() {
@@ -53,8 +58,9 @@ export default class DebuggerApp extends React.Component {
           events={eventTypeFilter(this.state.events, this.state.searchText)}
           handlePauseChange={this.handlePauseChange}
           handleSearchFilter={this.handleSearchFilter}
+          handleEventSelected={this.handleEventSelected}
         />
-        {/*<DetailsPane event={this.state.selectedEvent}/>*/}
+        <DetailsPane selectedEvent={this.state.selectedEvent}/>
       </div>
     )
   }

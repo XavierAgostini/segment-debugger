@@ -16,7 +16,11 @@ export default class EventList extends React.Component {
         <Pane>
           {
             this.props.events.map((event, index) => (
-              <Event key={JSON.stringify(event)} event={event}/>
+              <Event
+                key={JSON.stringify(event)}
+                event={event} isSelected={false}
+                handleEventSelected={this.props.handleEventSelected}
+              />
             ))
           }
         </Pane>

@@ -60,32 +60,24 @@ const getEventName = (event) => {
   if (event.type === 'group') return event.groupId
 }
 export default class Event extends React.Component {
-  state = {
-    event: {}
+  buttonClicked = () => {
+    console.log('btnClicked')
+    this.props.handleEventSelected(this.props.event)
   }
 
-  componentDidMount() {
-    try {
-      this.setState(() => ({
-        event: this.props.event
-      }))
-    } catch (e) {
-      console.log('caught_error',e)
-    } 
-  }
   render() {
     return (
-      <button style={buttonStyle}>
+      <button style={buttonStyle} onClick={this.buttonClicked}>
         {/*<CheckCircleIcon fill="#016cd1"/>*/}
         <div style={typeStyle}>
-          {this.state.event.type}
+          {this.props.event.type}
         </div>
         <div style={eventStyle}>
-          {getEventName(this.state.event)}
+          {getEventName(this.props.event)}
         </div>
         <div style={timestampStyle}>
-          {moment(this.state.event.receivedAt).format('YYYY/MM/DD HH:mm:ss')}
-    </div>
+          {moment(this.props.event.receivedAt).format('YYYY/MM/DD HH:mm:ss')}
+        </div>
       </button>
     )
   }
