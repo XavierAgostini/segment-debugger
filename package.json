@@ -11,15 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
-    "babel-cli": "6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "1.5.2",
-    "babel-preset-react": "6.24.1",
     "evergreen-ui": "^4.0.0-39",
     "express": "^4.16.3",
+    "javascript-stringify": "^1.6.0",
     "moment": "^2.22.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
@@ -27,6 +21,12 @@
     "webpack": "3.1.0"
   },
   "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
     "nodemon": "^1.18.4",
     "webpack-dev-server": "^2.5.1"
   }

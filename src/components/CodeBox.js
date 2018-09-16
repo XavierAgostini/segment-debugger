@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pane } from 'evergreen-ui'
+import javascriptStringify from 'javascript-stringify'
 
 const spanStyle1= {
   color: 'rgb(33, 145, 97)'
@@ -9,28 +10,38 @@ const spanStyle2 = {
 }
 
 const preStyle = {
-  overflow: 'hidden'
+  // overflow: 'hidden'
 }
+
 const prettyEvent = (event) =>  {
-  console.log('event',event)
-  var string = `analytics.${event.type}('${event.event}'`
-  if (event.properties) {
-    string += ', \{\n'
-    Object.entries(event.properties).forEach(([key, value]) => {
-      string += `  ${key}: ${value},\n`
-    })
-    string = string.slice(0,-2)
-    string += '\n});'
-  } else {
-    string += ');'
+  var string = `analytics.${event.type}(`
+  if (event.type === 'track') {
+    string += `'${event.event}'`
+    if (event.properties) {
+      string += ', \{\n'
+      string += javascriptStringify(event.properties, null, 2);
+    }
   }
-  
+  if (event.type === 'page' || event.type === 'screen') {
+    if (event.name) {
+      string += `${name}, `
+    }
+    string += javascriptStringify(event.properties, null, 2);
+  }
+  if (event.type === 'identify') {
+    if (event.userId) {
+      string += `'${event.userId}', `
+    }
+    string += javascriptStringify(event.traits, null, 2);
+  }
+  string+=')'
   return string
 }
-// const testEvent = '{"anonymousId":"78d263fd-729e-4d3a-a7d9-d5184b44100a","context":{"ip":"12.139.173.251","library":{"name":"analytics.js","version":"3.7.2"},"page":{"path":"/","referrer":"","search":"","title":"Test Workspace","url":"http://localhost:8081/"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"},"event":"Finish Signup","integrations":{},"messageId":"ajs-70bbf0573ac6c6c9db2629701597bd51","originalTimestamp":"2018-09-16T02:56:08.512Z","properties":{"impersonator_roles":[],"is_impersonated":false,"platform":"Test","platform type":"Client-side"},"receivedAt":"2018-09-16T02:56:08.536Z","sentAt":"2018-09-16T02:56:08.514Z","timestamp":"2018-09-16T02:56:08.534Z","type":"track","userId":"d"}'
+
 const rawEvent = (event) => {
   return JSON.stringify(event, null, 2);
 }
+
 export default class CodeBox extends React.Component {
   render() {
     return (
@@ -43,8 +54,8 @@ export default class CodeBox extends React.Component {
           <div>
             <pre style={preStyle}>
               <code>
-                {this.props.showPretty && rawEvent(this.props.event)}
-                {!this.props.showPretty && prettyEvent(this.props.event)}
+                {!this.props.showPretty && rawEvent(this.props.event)}
+                {this.props.showPretty && prettyEvent(this.props.event)}
               </code>
             </pre>
           </div>

@@ -8,7 +8,8 @@ const divStyle = {
   width: '50%'
 }
 const overflowStyle = {
-  overflow: 'auto hidden'
+  overflow: 'auto',
+  height: '500px'
 }
 export default class DetailsPane extends React.Component {
   state={
@@ -54,7 +55,7 @@ export default class DetailsPane extends React.Component {
               <Tab onClick={this.enablePretty}>Pretty</Tab>
               <Tab onClick={this.enableRaw}>Raw</Tab>
             </div> 
-            <CodeBox view={this.state.showPretty} event={this.props.selectedEvent}/>
+            <CodeBox showPretty={this.state.showPretty} event={this.props.selectedEvent}/>
           </div>
         )
       }

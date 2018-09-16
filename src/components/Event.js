@@ -52,10 +52,25 @@ const getEventName = (event) => {
     return event.event
   }
   if (event.type === 'page' || event.type === 'screen') {
-    return event.properties.name || event.properties.path
+    if (event.properties.category && event.properties.name) {
+      return event.properties.category + ' ' + event.properties.name
+    } else if (event.properties.category) {
+      return event.properties.category
+    } else if (event.properties.name) {
+      return event.properties.name
+    }
+    return event.properties.path
   }
   if (event.type === 'identify') {
-    return event.userId || event.anonymousId
+    if (event.userId) {
+      if (event.traits.email) {
+         return `${event.userId} (${event.traits.email})`
+      } else if (event.traits.name) {
+        return `${event.userId} (${event.traits.name})`
+      }
+    } else {
+      return `Anonymous Id: ${event.anonymousId}`
+    }
   }
   if (event.type === 'group') return event.groupId
 }
