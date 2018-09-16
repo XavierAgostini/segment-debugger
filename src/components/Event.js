@@ -82,8 +82,7 @@ export default class Event extends React.Component {
 
   render() {
     return (
-      <button style={buttonStyle} onClick={this.buttonClicked}>
-        {/*<CheckCircleIcon fill="#016cd1"/>*/}
+      <button style={buttonStyle} onClick={this.buttonClicked}  className="eventItem">
         <div style={typeStyle}>
           {this.props.event.type}
         </div>

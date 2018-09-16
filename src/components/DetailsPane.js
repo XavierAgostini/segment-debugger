@@ -1,7 +1,7 @@
 import React from 'react'
 // import DetailsControlBar from './DetailsControlBar'
 import CodeBox from './CodeBox'
-import { Button, Tab, CheckCircleIcon } from 'evergreen-ui'
+import { Button, Tab, Tabs, CheckCircleIcon } from 'evergreen-ui'
 
 const divStyle = {
   diplay: 'flex',
@@ -52,6 +52,7 @@ export default class DetailsPane extends React.Component {
               <div>Allowed</div>
             </div>
             <div>
+            <Tabs/>
               <Tab onClick={this.enablePretty}>Pretty</Tab>
               <Tab onClick={this.enableRaw}>Raw</Tab>
             </div> 
