@@ -1,0 +1,29 @@
+.lineNumbers {
+  background-color: #f7f8fa;
+  color: rgb(156, 177, 195);
+  border-right: 1px solid;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center
+}
+
+.codeBox {
+  height: 100%;
+  overflow: auto;
+}
+
+.codeStyling {
+  display: block;
+  overflow: auto hidden;
+  padding: 8px 16px;
+  margin: 0;
+  color: rgb(0, 0, 0);
+  background: white;
+  flex: 1 1 0%;
+  font-family: monospace,monospace;
+  font-size: 12px;
+  line-height: 16px;
+}

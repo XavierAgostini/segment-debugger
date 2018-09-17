@@ -19,7 +19,9 @@
 .eventItem:hover {
   outline: none;
   background:  #f7f8fa;
-  
+}
+.eventItem:focus {
+  outline: none;
 }
 .eventItem[data-is-selected='true'] {
   background: #e7f3ff;

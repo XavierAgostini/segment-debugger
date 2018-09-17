@@ -12,9 +12,9 @@ app.use(express.static(publicPath));
 
 app.get('/debugger-stream', (req, res) => {
   try {
-    // let request last as long as possible
-    // req.socket.setTimeout(Infinity);
-    const subscriber = redis.createClient('//redis:6379')
+    // for prod will need to have an environment variable for this
+    // const subscriber = redis.createClient('//redis:6379')
+    const subscriber = redis.createClient()
     subscriber.subscribe('events')
     var messageCount = 0
     subscriber.on('error', (err) => {

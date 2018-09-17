@@ -50,7 +50,11 @@ export default class DebuggerApp extends React.Component {
 
   handleEventSelected = (event) => {
     console.log('handleEventSelected')
-    this.setState(()=>({ selectedEvent: event }))
+    if (this.state.selectedEvent === event) {
+      event = undefined
+    }
+    this.setState(()=>({selectedEvent: event}))
+   
   }
 
   render() {
