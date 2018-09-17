@@ -4,7 +4,7 @@ import { Pane } from 'evergreen-ui'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 const listStyle = {
-  height:'500px',
+  height:'100%',
   overflow: 'auto'
 }
 export default class EventList extends React.Component {
@@ -19,7 +19,8 @@ export default class EventList extends React.Component {
             this.props.events.map((event, index) => (
               <Event
                 key={JSON.stringify(event)}
-                event={event} isSelected={false}
+                event={event}
+                isSelected={this.props.selectedEvent===event}
                 handleEventSelected={this.props.handleEventSelected}
               />
             ))

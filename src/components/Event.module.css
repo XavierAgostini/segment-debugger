@@ -1,0 +1,50 @@
+.eventItem {
+  align-items: center;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid rgba(67,90,111,.079);
+  border-radius: 0;
+  display: flex;
+  height: 56px;
+  overflow: hidden;
+  padding-left: 32px;
+  padding-right: 16px;
+  text-align: left;
+  width: 100%;
+  animation-name: slideDown !important;
+  animation-duration: 0.2s !important;
+  animation-timing-function: linear !important;
+  
+}
+.eventItem:hover {
+  outline: none;
+  background:  #f7f8fa;
+  
+}
+.eventItem[data-is-selected='true'] {
+  background: #e7f3ff;
+  outline: none;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 56px;
+    opacity: 1;
+  }
+}
+
+.eventNameText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.eventTimeStamp {
+  font-size: 14px;
+  min-width: 144px;
+  text-align: right;
+}

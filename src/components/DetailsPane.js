@@ -1,7 +1,9 @@
 import React from 'react'
 // import DetailsControlBar from './DetailsControlBar'
 import CodeBox from './CodeBox'
-import { Button, Tab, Tabs, CheckCircleIcon } from 'evergreen-ui'
+import { Tab } from 'evergreen-ui'
+import CircleCheck from './CircleCheck'
+import css from './DetailsPane.module.css'
 
 const divStyle = {
   diplay: 'flex',
@@ -17,8 +19,7 @@ export default class DetailsPane extends React.Component {
       { label: 'Pretty', value: 'pretty' },
       { label: 'Raw', value: 'raw' }
     ],
-    showPretty: true,
-    eventName: 'test'
+    showPretty: true
   }
   enablePretty = () => {
     console.log('enablePretty')
@@ -46,13 +47,14 @@ export default class DetailsPane extends React.Component {
       } else {
         return (
           <div style={overflowStyle}>
-            <div>
-              {/*<CheckCircleIcon/>*/}
-              <div>{this.state.eventName}</div>
-              <div>Allowed</div>
+            <div className="detailsHeader">
+              <CircleCheck height="45px"/>
+              <div className="detailsHeaderName">
+                <h2>{this.props.selectedEvent.event}</h2>
+                Allowed
+              </div>
             </div>
             <div>
-            <Tabs/>
               <Tab onClick={this.enablePretty}>Pretty</Tab>
               <Tab onClick={this.enableRaw}>Raw</Tab>
             </div> 
@@ -60,10 +62,6 @@ export default class DetailsPane extends React.Component {
           </div>
         )
       }
-    }
-    
-    const test = () => {
-      return (<h1>Hello World</h1>)
     }
     return (
       renderDetailsBox()

@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "css-loader": "^1.0.0",
     "evergreen-ui": "^4.0.0-39",
     "express": "^4.16.3",
     "javascript-stringify": "^1.6.0",
@@ -19,6 +20,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.5.1",
     "redis": "^2.8.0",
+    "style-loader": "^0.23.0",
     "webpack": "3.1.0"
   },
   "devDependencies": {

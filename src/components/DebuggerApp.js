@@ -4,7 +4,8 @@ import ListPane from './ListPane'
 import { Button, Tabs } from 'evergreen-ui'
 
 const divStyle = {
-  display: 'flex'
+  display: 'flex',
+  height: '100%'
 }
 
 const eventTypeFilter = (events, searchText) => {
@@ -60,6 +61,7 @@ export default class DebuggerApp extends React.Component {
           handlePauseChange={this.handlePauseChange}
           handleSearchFilter={this.handleSearchFilter}
           handleEventSelected={this.handleEventSelected}
+          selectedEvent={this.state.selectedEvent}
         />
         <DetailsPane selectedEvent={this.state.selectedEvent}/>
       </div>

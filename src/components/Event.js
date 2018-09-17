@@ -1,24 +1,9 @@
 import React from 'react'
 import { CheckCircleIcon } from 'evergreen-ui'
 import moment from 'moment'
+import CircleCheck from './CircleCheck'
+import css from './Event.module.css'
 
-const buttonStyle = {
-  "WebkitAnimation": "slidein-dc00891e0a41806eb5d3 .4s cubic-bezier(.4,0,.2,1)",
-  "WebkitBoxAlign": "center",
-  "alignItems": "center",
-  "animation": "slidein-dc00891e0a41806eb5d3 .4s cubic-bezier(.4,0,.2,1)",
-  "background": "#fff",
-  "border": "none",
-  "borderBottom": "1px solid rgba(67,90,111,.079)",
-  "borderRadius": "0",
-  "display": "flex",
-  "height": "56px",
-  "overflow": "hidden",
-  "paddingLeft": "32px",
-  "paddingRight": "16px",
-  "textAlign": "left",
-  "width": "100%"
-}
 const typeStyle = {
   fontSize: '12px',
   fontWeight: '400',
@@ -74,6 +59,7 @@ const getEventName = (event) => {
   }
   if (event.type === 'group') return event.groupId
 }
+
 export default class Event extends React.Component {
   buttonClicked = () => {
     console.log('btnClicked')
@@ -82,14 +68,17 @@ export default class Event extends React.Component {
 
   render() {
     return (
-      <button style={buttonStyle} onClick={this.buttonClicked}  className="eventItem">
+      <button className="eventItem" onClick={this.buttonClicked} data-is-selected={this.props.isSelected}>
+        <CircleCheck/>
         <div style={typeStyle}>
           {this.props.event.type}
         </div>
         <div style={eventStyle}>
-          {getEventName(this.props.event)}
+          <div className="eventNameText">
+            {getEventName(this.props.event)}
+          </div>
         </div>
-        <div style={timestampStyle}>
+        <div class="eventTimeStamp">
           {moment(this.props.event.receivedAt).format('YYYY/MM/DD HH:mm:ss')}
         </div>
       </button>
