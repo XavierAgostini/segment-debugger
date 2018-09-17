@@ -1,0 +1,17 @@
+.selectEventWrapper {
+  text-align: center;
+  display: flex;
+}
+.imageWrapper {
+  width: 165px;
+  height: 52px;
+  display: inline-block;
+  margin: 0px 0px 16px;
+}
+
+h2 {
+  box-sizing: inherit;
+}
+p {
+  max-width: 304px;
+}

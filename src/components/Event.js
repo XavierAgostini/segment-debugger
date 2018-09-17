@@ -2,7 +2,7 @@ import React from 'react'
 import { CheckCircleIcon } from 'evergreen-ui'
 import moment from 'moment'
 import CircleCheck from './CircleCheck'
-import css from './Event.module.css'
+import './Event.module.css'
 
 const typeStyle = {
   fontSize: '12px',
@@ -78,7 +78,7 @@ export default class Event extends React.Component {
             {getEventName(this.props.event)}
           </div>
         </div>
-        <div class="eventTimeStamp">
+        <div className="eventTimeStamp">
           {moment(this.props.event.receivedAt).format('YYYY/MM/DD HH:mm:ss')}
         </div>
       </button>

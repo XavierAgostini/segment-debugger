@@ -1,0 +1,7 @@
+.listPane {
+  border-right: 1px solid rgb(213, 222, 230);
+  border-top-color: rgb(213, 222, 230);
+  border-bottom-color: rgb(213, 222, 230);
+  border-left-color: rgb(213, 222, 230);
+  /* display: flex; */
+}
