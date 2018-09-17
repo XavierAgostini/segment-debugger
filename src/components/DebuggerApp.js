@@ -5,6 +5,7 @@ import { Button, Tabs } from 'evergreen-ui'
 
 const divStyle = {
   display: 'flex',
+  flex: 1,
   height: '100%'
 }
 

@@ -3,5 +3,8 @@
   border-top-color: rgb(213, 222, 230);
   border-bottom-color: rgb(213, 222, 230);
   border-left-color: rgb(213, 222, 230);
-  /* display: flex; */
+  flex: 1; 
+  /* display: flex;
+ 
+  /* padding: 0 16px; */
 }

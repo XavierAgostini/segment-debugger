@@ -10,8 +10,14 @@
 }
 
 h2 {
+  color: rgb(31, 65, 96);
+  font-weight: 500;
+  font-size: 16px;
   box-sizing: inherit;
+  margin: 0;
 }
 p {
-  max-width: 304px;
+  max-width: 304px !important;
+  margin: 0;
+  color: #435a6f;
 }

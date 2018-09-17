@@ -4,17 +4,20 @@ const redis = require('redis')
 
 const port = process.env.PORT || 5000
 const publicPath = path.join(__dirname, '../public');
-
+const env = process.env.NODE_ENV || 'development'
 const app = express()
 
 app.use(express.static(publicPath));
 
-
 app.get('/debugger-stream', (req, res) => {
   try {
-    // for prod will need to have an environment variable for this
-    // const subscriber = redis.createClient('//redis:6379')
-    const subscriber = redis.createClient()
+    // need to alter Redis server url for running in a docker container
+    let redisUrl = ''
+    if (env !== 'development') {
+      redisUrl = '//redis:6379'
+    }
+
+    const subscriber = redis.createClient(redisUrl)
     subscriber.subscribe('events')
     var messageCount = 0
     subscriber.on('error', (err) => {
@@ -34,6 +37,7 @@ app.get('/debugger-stream', (req, res) => {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache',
       'Connection': 'keep-alive',
+      // These two are for development purposes as webpack dev server runs on a differnt port
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': 'X-Requested-With'
     })
@@ -46,26 +50,6 @@ app.get('/debugger-stream', (req, res) => {
   } catch (e) {
     res.sendStatus(404).send(e)
   }
-})
-
-app.get('/debugger-stream-test', (req, res) => {
-  // let request last as long as possible
-  // req.socket.setTimeout(Infinity);
-  var id = 0
-
-  res.writeHead(200, {
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    'Connection': 'keep-alive'
-  })
-  res.write('\n')
-  setInterval(()=> {
-    id++
-    res.write(`id: ${id}\n`)
-    res.write('type: test\n')
-    res.write(`data: message-${id}\n`)
-    res.write('\n')
-  }, 2000)
 })
 
 app.listen(port, (err) => {

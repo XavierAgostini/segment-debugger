@@ -8,7 +8,7 @@ const toolBarStyle = {
   display: '-webkit-box',
   display: '-ms-flexbox',
   display: 'flex',
-  minHeight: '72px',
+  height: '72px',
   padding: '0 16px',
 }
 const buttonWrapper = {
@@ -43,33 +43,34 @@ export default class ListControlBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <div style={toolBarStyle}>
-          <SegmentedControl
-            width={240}
-            options={this.state.options}
-            value={this.state.value}
-            onChange={value => this.handleButtonChange(value)}
-          />
-          <SearchInput
-            name="searchBox"
-            marginX='16px'
-            placeholder='Type to search...'
-            width='280px'
-            onChange={this.handleSearchChange}
-          />
-          <Button
-          alignItems='center'
-          children='Advanced'
-          display='inline-flex'
-          is='button'
-          justifyContent='center'
-          secondary='true'
-          >
-            Advanced
-          </Button>
-        </div>
-      </div>     
+      <div style={toolBarStyle}>
+        <SegmentedControl
+          width={160}
+          height={40}
+          options={this.state.options}
+          value={this.state.value}
+          onChange={value => this.handleButtonChange(value)}
+        />
+        <SearchInput
+          name="searchBox"
+          marginX='16px'
+          placeholder='Type to search...'
+          width='360px'
+          height={40}
+          onChange={this.handleSearchChange}
+        />
+        <Button
+        alignItems='center'
+        children='Advanced'
+        display='inline-flex'
+        disabled={true}
+        is='button'
+        justifyContent='center'
+        secondary='true'
+        >
+          Advanced
+        </Button>
+      </div>    
     )
   }
 }

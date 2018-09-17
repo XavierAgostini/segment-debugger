@@ -7,7 +7,8 @@
     "dev": "nodemon server/index.js",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
-    "prod": "node server/index.js"
+    "prod": "NODE_ENV=prod && node server/index.js",
+    "test": "NODE_ENV=test"
   },
   "author": "",
   "license": "ISC",

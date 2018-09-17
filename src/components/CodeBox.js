@@ -45,7 +45,7 @@ const generateLines = (objString) => {
   let lines = []
   for(var i = 0; i < numLines; i++) {
     let lineNum = i + 1
-    lines.push(<Pane key={`line-pane-${i}`} display="flex" alignItems="center">{lineNum}<Pane marginLeft="auto"></Pane></Pane>)
+    lines.push(<Pane key={`line-pane-${i}`} display="flex" alignItems="center"><Pane marginLeft="auto">{lineNum}</Pane></Pane>)
   }
   return lines
 }
@@ -61,8 +61,8 @@ export default class CodeBox extends React.Component {
           height='100%'
         >
           <div className="lineNumbers">
-              {!this.props.showPretty && generateLines(rawEvent(this.props.event))}
-              {this.props.showPretty && generateLines(prettyEvent(this.props.event))}
+            {!this.props.showPretty && generateLines(rawEvent(this.props.event))}
+            {this.props.showPretty && generateLines(prettyEvent(this.props.event))}
           </div>
           <pre className="codeStyling">
             <code>
