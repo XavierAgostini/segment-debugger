@@ -6,7 +6,6 @@ const port = process.env.PORT || 5000
 const publicPath = path.join(__dirname, '../public');
 
 const app = express()
-const client = redis.createClient()
 
 app.use(express.static(publicPath));
 
@@ -15,7 +14,7 @@ app.get('/debugger-stream', (req, res) => {
   try {
     // let request last as long as possible
     // req.socket.setTimeout(Infinity);
-    const subscriber = redis.createClient()
+    const subscriber = redis.createClient('//redis:6379')
     subscriber.subscribe('events')
     var messageCount = 0
     subscriber.on('error', (err) => {
