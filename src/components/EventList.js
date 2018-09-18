@@ -1,7 +1,6 @@
 import React from 'react'
 import Event from './Event'
 import { Pane } from 'evergreen-ui'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 const listStyle = {
   height:'100%',

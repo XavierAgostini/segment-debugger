@@ -2,6 +2,7 @@ import React from 'react'
 import DetailsPane from './DetailsPane'
 import ListPane from './ListPane'
 import { Button, Tabs, Alert, toaster } from 'evergreen-ui'
+import EventSource from 'eventsource'
 
 const divStyle = {
   display: 'flex',
