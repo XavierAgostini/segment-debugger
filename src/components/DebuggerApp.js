@@ -32,28 +32,40 @@ export default class DebuggerApp extends React.Component {
   }
   componentDidMount() {
     const eventSource = new EventSource('http://localhost:5000/debugger-stream')
+
     eventSource.addEventListener('message', (event) => {
-      if(this.state.connectionError) {
-        this.setState(() => ({ connectionError: false}))
-        toaster.closeAll()
-        setTimeout(()=> {
-          toaster.success('Server successfully reconnected!', {duration: 3})
-        },100)   
+      if (event.data === 'server-error') {
+        this.alertServerError()
+      } else {
+        this.alertServerSuccess()
+        if(!this.state.isPaused) {
+          this.setState((prevState) => ({
+            events: [JSON.parse(event.data)].concat(prevState.events)
+          }))
+          if(this.state.events.length >= 50) this.state.events.length = 50
+        } 
       }
-      if(!this.state.isPaused) {
-        this.setState((prevState) => ({
-          events: [JSON.parse(event.data)].concat(prevState.events)
-        }))
-        if(this.state.events.length >= 50) this.state.events.length = 50
-       
-      } 
     })
     eventSource.addEventListener('error', (error) => {
-      if(!this.state.connectionError) toaster.danger('Connection to server terminated. Trying to reconnect...', {duration: 30})
-      this.setState(() => ({ connectionError: true})) 
+      this.alertServerError()
     })
   }
-  
+
+  alertServerError = () => {
+    if(!this.state.connectionError) toaster.danger('Connection to server terminated. Trying to reconnect...', {duration: 30})
+    this.setState(() => ({ connectionError: true})) 
+  }
+
+  alertServerSuccess = () => {
+    if(this.state.connectionError) {
+      this.setState(() => ({ connectionError: false}))
+      toaster.closeAll()
+      setTimeout(()=> {
+        toaster.success('Server successfully reconnected!', {duration: 3})
+      },100)   
+    }
+  }
+
   handlePauseChange = (pauseStatus) => {
     this.setState(() => ({ isPaused: pauseStatus}))
   }
@@ -75,7 +87,6 @@ export default class DebuggerApp extends React.Component {
   render() {
     return (
       <div style={divStyle}>
-        
         <ListPane
           events={eventTypeFilter(this.state.events, this.state.searchText)}
           handlePauseChange={this.handlePauseChange}
