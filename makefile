@@ -24,5 +24,6 @@ test: ;@echo "Test ${PROJECT}....."; \
 prod: ;@echo "Starting ${PROJECT}....."; \
 	# make build
 	# node config/config.js
+	make build
 	docker-compose -f docker-compose.prod.yml build
 	docker-compose -f docker-compose.prod.yml up
