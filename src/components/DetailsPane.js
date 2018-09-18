@@ -41,13 +41,11 @@ export default class DetailsPane extends React.Component {
     showPretty: true
   }
   enablePretty = () => {
-    console.log('enablePretty')
     this.setState(() => ({
       showPretty: true
     }))
   }
   enableRaw = () => {
-    console.log('enableRaw')
     this.setState(() => ({
       showPretty: false
     }))

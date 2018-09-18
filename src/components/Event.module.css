@@ -40,13 +40,33 @@
     opacity: 1;
   }
 }
-
+.eventName {
+  webkit-box-align: center;
+  webkit-box-flex: 1;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -.05px;
+  line-height: 22px;
+  margin-ight: 24px;
+  width: 0;
+}
 .eventNameText {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
+.eventType {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin: 0 24px;
+  min-width: 56px;
+  text-transform: uppercase;
+}
 .eventTimeStamp {
   font-size: 14px;
   min-width: 144px;

@@ -23,6 +23,7 @@
     }
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "css-loader": "^1.0.0",
     "evergreen-ui": "^4.0.0-39",
     "express": "^4.16.3",

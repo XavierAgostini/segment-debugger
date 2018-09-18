@@ -2,7 +2,7 @@ import React from 'react'
 import DetailsPane from './DetailsPane'
 import ListPane from './ListPane'
 import { Button, Tabs, Alert, toaster } from 'evergreen-ui'
-// import EventSource from 'eventsource'
+import EventSource from 'eventsource'
 
 const divStyle = {
   display: 'flex',
@@ -19,10 +19,7 @@ const eventTypeFilter = (events, searchText) => {
 }
 
 export default class DebuggerApp extends React.Component {
-  constructor(props) {
-    super(props)
-    
-  }
+
   state = {
     connectionError: false,
     isPaused: false,

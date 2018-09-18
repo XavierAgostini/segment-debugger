@@ -2,6 +2,7 @@
 const express = require('express')
 const redis = require('redis')
 const path = require('path')
+var cors = require('cors')
 
 const port = process.env.PORT || 5000
 const publicPath = path.join(__dirname, '../public');
@@ -10,7 +11,7 @@ const app = express()
 
 // serve static content to client
 app.use(express.static(publicPath));
-
+app.use(cors())
 app.get('/debugger-stream', (req, res) => {
   try {
     // need to alter Redis server url for running in a docker container

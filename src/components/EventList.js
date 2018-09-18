@@ -7,9 +7,6 @@ const listStyle = {
   overflow: 'auto'
 }
 export default class EventList extends React.Component {
-  componentDidMount() {
-    console.log(this.props.events)
-  }
   render() {
     return (
       <div style={listStyle}>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SelectEvent/> render() renders the component 1`] = `
+exports[`<SelectEvent/> should render SelectEvent as expected 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

@@ -4,34 +4,6 @@ import moment from 'moment'
 import CircleCheck from './CircleCheck'
 import './Event.module.css'
 
-const typeStyle = {
-  fontSize: '12px',
-  fontWeight: '400',
-  letterSpacing: '0',
-  lineHeight: '16px',
-  margin: '0 24px',
-  minWidth: '56px',
-  textTransform: 'uppercase'
-}
-const eventStyle = {
-  WebkitBoxAlign: 'center',
-  WebkitBoxFlex: '1',
-  alignItems: 'center',
-  display: '-webkit-box',
-  display: '-ms-flexbox',
-  display: 'flex',
-  flex: '1',
-  fontSize: '14px',
-  fontWeight: '500',
-  letterSpacing: '-.05px',
-  lineHheight: '22px',
-  marginRight: '24px',
-  width: '0'
-}
-const timestampStyle = {
-  minWidth: '144px',
-  textAlign: 'right'
-}
 const getEventName = (event) => {
   if (event.type === 'track') {
     return event.event
@@ -69,10 +41,10 @@ export default class Event extends React.Component {
     return (
       <button className="eventItem" onClick={this.buttonClicked} data-is-selected={this.props.isSelected}>
         <CircleCheck/>
-        <div style={typeStyle}>
+        <div className="eventType">
           {this.props.event.type}
         </div>
-        <div style={eventStyle}>
+        <div className="eventName">
           <div className="eventNameText">
             {getEventName(this.props.event)}
           </div>

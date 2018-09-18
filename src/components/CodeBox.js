@@ -3,14 +3,6 @@ import { Pane } from 'evergreen-ui'
 import javascriptStringify from 'javascript-stringify'
 import './CodeBox.module.css'
 
-const spanStyle1= {
-  color: 'rgb(33, 145, 97)'
-}
-const spanStyle2 = {
-  color: 'rgb(149, 65, 33)'
-}
-
-
 const prettyEvent = (event) =>  {
   var string = `analytics.${event.type}(`
   if (event.type === 'track') {

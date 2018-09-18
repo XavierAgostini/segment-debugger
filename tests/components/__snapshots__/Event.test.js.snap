@@ -6,37 +6,21 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Event
     event={
       Object {
-        "anonymousId": "78d263fd-729e-4d3a-a7d9-d5184b44100a",
+        "anonymousId": "e1dbd770-1a96-48da-8bb9-2a294a11a571",
         "context": Object {
-          "ip": "12.139.173.251",
+          "ip": "149.109.19.117",
           "library": Object {
             "name": "analytics.js",
-            "version": "3.7.2",
+            "version": "3.0.0",
           },
-          "page": Object {
-            "path": "/",
-            "referrer": "",
-            "search": "",
-            "title": "Test Workspace",
-            "url": "http://localhost:8081/",
-          },
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
         },
+        "event": "Notification Shown",
         "integrations": Object {},
-        "messageId": "ajs-5fb0c825ec1404ca57c8b6161ed028df",
-        "originalTimestamp": "2018-09-16T02:53:42.364Z",
-        "properties": Object {
-          "path": "/",
-          "referrer": "",
-          "search": "",
-          "title": "Test Workspace",
-          "url": "http://localhost:8081/",
-        },
-        "receivedAt": "2018-09-16T02:53:42.392Z",
-        "sentAt": "2018-09-16T02:53:42.368Z",
-        "timestamp": "2018-09-16T02:53:42.388Z",
-        "type": "page",
-        "userId": "d",
+        "messageId": "ajs-ac65f2dc-a7ba-496c-be3a-74a0de177c7f",
+        "receivedAt": "2018-09-18T20:01:40.790Z",
+        "sentAt": 1537300895790,
+        "type": "track",
+        "userId": "6a8e7fe9-09e8-480b-bf12-27c052035ebf",
       }
     }
     handleEventSelected={[MockFunction]}
@@ -58,47 +42,23 @@ ShallowWrapper {
       "children": Array [
         <Unknown />,
         <div
-          style={
-            Object {
-              "fontSize": "12px",
-              "fontWeight": "400",
-              "letterSpacing": "0",
-              "lineHeight": "16px",
-              "margin": "0 24px",
-              "minWidth": "56px",
-              "textTransform": "uppercase",
-            }
-          }
+          className="eventType"
         >
-          page
+          track
         </div>,
         <div
-          style={
-            Object {
-              "WebkitBoxAlign": "center",
-              "WebkitBoxFlex": "1",
-              "alignItems": "center",
-              "display": "flex",
-              "flex": "1",
-              "fontSize": "14px",
-              "fontWeight": "500",
-              "letterSpacing": "-.05px",
-              "lineHheight": "22px",
-              "marginRight": "24px",
-              "width": "0",
-            }
-          }
+          className="eventName"
         >
           <div
             className="eventNameText"
           >
-            /
+            Notification Shown
           </div>
         </div>,
         <div
           className="eventTimeStamp"
         >
-          2018/09/15 19:53:42
+          2018/09/18 13:01:40
         </div>,
       ],
       "className": "eventItem",
@@ -121,19 +81,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "page",
-          "style": Object {
-            "fontSize": "12px",
-            "fontWeight": "400",
-            "letterSpacing": "0",
-            "lineHeight": "16px",
-            "margin": "0 24px",
-            "minWidth": "56px",
-            "textTransform": "uppercase",
-          },
+          "children": "track",
+          "className": "eventType",
         },
         "ref": null,
-        "rendered": "page",
+        "rendered": "track",
         "type": "div",
       },
       Object {
@@ -144,21 +96,9 @@ ShallowWrapper {
           "children": <div
             className="eventNameText"
           >
-            /
+            Notification Shown
           </div>,
-          "style": Object {
-            "WebkitBoxAlign": "center",
-            "WebkitBoxFlex": "1",
-            "alignItems": "center",
-            "display": "flex",
-            "flex": "1",
-            "fontSize": "14px",
-            "fontWeight": "500",
-            "letterSpacing": "-.05px",
-            "lineHheight": "22px",
-            "marginRight": "24px",
-            "width": "0",
-          },
+          "className": "eventName",
         },
         "ref": null,
         "rendered": Object {
@@ -166,11 +106,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "/",
+            "children": "Notification Shown",
             "className": "eventNameText",
           },
           "ref": null,
-          "rendered": "/",
+          "rendered": "Notification Shown",
           "type": "div",
         },
         "type": "div",
@@ -180,11 +120,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "2018/09/15 19:53:42",
+          "children": "2018/09/18 13:01:40",
           "className": "eventTimeStamp",
         },
         "ref": null,
-        "rendered": "2018/09/15 19:53:42",
+        "rendered": "2018/09/18 13:01:40",
         "type": "div",
       },
     ],
@@ -199,47 +139,23 @@ ShallowWrapper {
         "children": Array [
           <Unknown />,
           <div
-            style={
-              Object {
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0",
-                "lineHeight": "16px",
-                "margin": "0 24px",
-                "minWidth": "56px",
-                "textTransform": "uppercase",
-              }
-            }
+            className="eventType"
           >
-            page
+            track
           </div>,
           <div
-            style={
-              Object {
-                "WebkitBoxAlign": "center",
-                "WebkitBoxFlex": "1",
-                "alignItems": "center",
-                "display": "flex",
-                "flex": "1",
-                "fontSize": "14px",
-                "fontWeight": "500",
-                "letterSpacing": "-.05px",
-                "lineHheight": "22px",
-                "marginRight": "24px",
-                "width": "0",
-              }
-            }
+            className="eventName"
           >
             <div
               className="eventNameText"
             >
-              /
+              Notification Shown
             </div>
           </div>,
           <div
             className="eventTimeStamp"
           >
-            2018/09/15 19:53:42
+            2018/09/18 13:01:40
           </div>,
         ],
         "className": "eventItem",
@@ -262,19 +178,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "page",
-            "style": Object {
-              "fontSize": "12px",
-              "fontWeight": "400",
-              "letterSpacing": "0",
-              "lineHeight": "16px",
-              "margin": "0 24px",
-              "minWidth": "56px",
-              "textTransform": "uppercase",
-            },
+            "children": "track",
+            "className": "eventType",
           },
           "ref": null,
-          "rendered": "page",
+          "rendered": "track",
           "type": "div",
         },
         Object {
@@ -285,21 +193,9 @@ ShallowWrapper {
             "children": <div
               className="eventNameText"
             >
-              /
+              Notification Shown
             </div>,
-            "style": Object {
-              "WebkitBoxAlign": "center",
-              "WebkitBoxFlex": "1",
-              "alignItems": "center",
-              "display": "flex",
-              "flex": "1",
-              "fontSize": "14px",
-              "fontWeight": "500",
-              "letterSpacing": "-.05px",
-              "lineHheight": "22px",
-              "marginRight": "24px",
-              "width": "0",
-            },
+            "className": "eventName",
           },
           "ref": null,
           "rendered": Object {
@@ -307,11 +203,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "/",
+              "children": "Notification Shown",
               "className": "eventNameText",
             },
             "ref": null,
-            "rendered": "/",
+            "rendered": "Notification Shown",
             "type": "div",
           },
           "type": "div",
@@ -321,11 +217,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "2018/09/15 19:53:42",
+            "children": "2018/09/18 13:01:40",
             "className": "eventTimeStamp",
           },
           "ref": null,
-          "rendered": "2018/09/15 19:53:42",
+          "rendered": "2018/09/18 13:01:40",
           "type": "div",
         },
       ],
