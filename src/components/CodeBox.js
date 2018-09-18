@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pane } from 'evergreen-ui'
 import javascriptStringify from 'javascript-stringify'
-import css from './CodeBox.module.css'
+import './CodeBox.module.css'
 
 const spanStyle1= {
   color: 'rgb(33, 145, 97)'

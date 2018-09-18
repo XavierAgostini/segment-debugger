@@ -1,18 +1,10 @@
 import React from 'react'
-// import DetailsControlBar from './DetailsControlBar'
 import CodeBox from './CodeBox'
 import { Tab } from 'evergreen-ui'
 import CircleCheck from './CircleCheck'
 import SelectEvent from './SelectEvent'
 import './DetailsPane.module.css'
 
-const divStyle = {
-  diplay: 'flex',
-  width: '50%'
-}
-const overflowStyle = {
-
-}
 const getEventName = (event) => {
   if (event.type === 'track') {
     return event.event

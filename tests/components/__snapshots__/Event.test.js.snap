@@ -1,0 +1,355 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Event/> should render Event correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Event
+    event={
+      Object {
+        "anonymousId": "78d263fd-729e-4d3a-a7d9-d5184b44100a",
+        "context": Object {
+          "ip": "12.139.173.251",
+          "library": Object {
+            "name": "analytics.js",
+            "version": "3.7.2",
+          },
+          "page": Object {
+            "path": "/",
+            "referrer": "",
+            "search": "",
+            "title": "Test Workspace",
+            "url": "http://localhost:8081/",
+          },
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
+        },
+        "integrations": Object {},
+        "messageId": "ajs-5fb0c825ec1404ca57c8b6161ed028df",
+        "originalTimestamp": "2018-09-16T02:53:42.364Z",
+        "properties": Object {
+          "path": "/",
+          "referrer": "",
+          "search": "",
+          "title": "Test Workspace",
+          "url": "http://localhost:8081/",
+        },
+        "receivedAt": "2018-09-16T02:53:42.392Z",
+        "sentAt": "2018-09-16T02:53:42.368Z",
+        "timestamp": "2018-09-16T02:53:42.388Z",
+        "type": "page",
+        "userId": "d",
+      }
+    }
+    handleEventSelected={[MockFunction]}
+    isSelected={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Unknown />,
+        <div
+          style={
+            Object {
+              "fontSize": "12px",
+              "fontWeight": "400",
+              "letterSpacing": "0",
+              "lineHeight": "16px",
+              "margin": "0 24px",
+              "minWidth": "56px",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          page
+        </div>,
+        <div
+          style={
+            Object {
+              "WebkitBoxAlign": "center",
+              "WebkitBoxFlex": "1",
+              "alignItems": "center",
+              "display": "flex",
+              "flex": "1",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "letterSpacing": "-.05px",
+              "lineHheight": "22px",
+              "marginRight": "24px",
+              "width": "0",
+            }
+          }
+        >
+          <div
+            className="eventNameText"
+          >
+            /
+          </div>
+        </div>,
+        <div
+          className="eventTimeStamp"
+        >
+          2018/09/15 19:53:42
+        </div>,
+      ],
+      "className": "eventItem",
+      "data-is-selected": false,
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "page",
+          "style": Object {
+            "fontSize": "12px",
+            "fontWeight": "400",
+            "letterSpacing": "0",
+            "lineHeight": "16px",
+            "margin": "0 24px",
+            "minWidth": "56px",
+            "textTransform": "uppercase",
+          },
+        },
+        "ref": null,
+        "rendered": "page",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="eventNameText"
+          >
+            /
+          </div>,
+          "style": Object {
+            "WebkitBoxAlign": "center",
+            "WebkitBoxFlex": "1",
+            "alignItems": "center",
+            "display": "flex",
+            "flex": "1",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "letterSpacing": "-.05px",
+            "lineHheight": "22px",
+            "marginRight": "24px",
+            "width": "0",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "/",
+            "className": "eventNameText",
+          },
+          "ref": null,
+          "rendered": "/",
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "2018/09/15 19:53:42",
+          "className": "eventTimeStamp",
+        },
+        "ref": null,
+        "rendered": "2018/09/15 19:53:42",
+        "type": "div",
+      },
+    ],
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Unknown />,
+          <div
+            style={
+              Object {
+                "fontSize": "12px",
+                "fontWeight": "400",
+                "letterSpacing": "0",
+                "lineHeight": "16px",
+                "margin": "0 24px",
+                "minWidth": "56px",
+                "textTransform": "uppercase",
+              }
+            }
+          >
+            page
+          </div>,
+          <div
+            style={
+              Object {
+                "WebkitBoxAlign": "center",
+                "WebkitBoxFlex": "1",
+                "alignItems": "center",
+                "display": "flex",
+                "flex": "1",
+                "fontSize": "14px",
+                "fontWeight": "500",
+                "letterSpacing": "-.05px",
+                "lineHheight": "22px",
+                "marginRight": "24px",
+                "width": "0",
+              }
+            }
+          >
+            <div
+              className="eventNameText"
+            >
+              /
+            </div>
+          </div>,
+          <div
+            className="eventTimeStamp"
+          >
+            2018/09/15 19:53:42
+          </div>,
+        ],
+        "className": "eventItem",
+        "data-is-selected": false,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "page",
+            "style": Object {
+              "fontSize": "12px",
+              "fontWeight": "400",
+              "letterSpacing": "0",
+              "lineHeight": "16px",
+              "margin": "0 24px",
+              "minWidth": "56px",
+              "textTransform": "uppercase",
+            },
+          },
+          "ref": null,
+          "rendered": "page",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="eventNameText"
+            >
+              /
+            </div>,
+            "style": Object {
+              "WebkitBoxAlign": "center",
+              "WebkitBoxFlex": "1",
+              "alignItems": "center",
+              "display": "flex",
+              "flex": "1",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "letterSpacing": "-.05px",
+              "lineHheight": "22px",
+              "marginRight": "24px",
+              "width": "0",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "/",
+              "className": "eventNameText",
+            },
+            "ref": null,
+            "rendered": "/",
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "2018/09/15 19:53:42",
+            "className": "eventTimeStamp",
+          },
+          "ref": null,
+          "rendered": "2018/09/15 19:53:42",
+          "type": "div",
+        },
+      ],
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

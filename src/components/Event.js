@@ -62,7 +62,6 @@ const getEventName = (event) => {
 
 export default class Event extends React.Component {
   buttonClicked = () => {
-    console.log('btnClicked')
     this.props.handleEventSelected(this.props.event)
   }
 
