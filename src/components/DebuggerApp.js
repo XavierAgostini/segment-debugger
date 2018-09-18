@@ -1,7 +1,7 @@
 import React from 'react'
 import DetailsPane from './DetailsPane'
 import ListPane from './ListPane'
-import { Button, Tabs } from 'evergreen-ui'
+import { Button, Tabs, Alert, toaster } from 'evergreen-ui'
 
 const divStyle = {
   display: 'flex',
@@ -20,9 +20,10 @@ const eventTypeFilter = (events, searchText) => {
 export default class DebuggerApp extends React.Component {
   constructor(props) {
     super(props)
-    this.eventSource = new EventSource('http://localhost:5000/debugger-stream')
+    
   }
   state = {
+    connectionError: false,
     isPaused: false,
     selectedEvent: undefined,
     events: new Array(100),
@@ -30,8 +31,15 @@ export default class DebuggerApp extends React.Component {
     searchText: ''
   }
   componentDidMount() {
-    console.log('debugger app mounted')
-    this.eventSource.addEventListener('message', (event) => {
+    const eventSource = new EventSource('http://localhost:5000/debugger-stream')
+    eventSource.addEventListener('message', (event) => {
+      if(this.state.connectionError) {
+        this.setState(() => ({ connectionError: false}))
+        toaster.closeAll()
+        setTimeout(()=> {
+          toaster.success('Server successfully reconnected!', {duration: 3})
+        },100)   
+      }
       if(!this.state.isPaused) {
         this.setState((prevState) => ({
           events: [JSON.parse(event.data)].concat(prevState.events)
@@ -39,6 +47,10 @@ export default class DebuggerApp extends React.Component {
         if(this.state.events.length >= 50) this.state.events.length = 50
        
       } 
+    })
+    eventSource.addEventListener('error', (error) => {
+      if(!this.state.connectionError) toaster.danger('Connection to server terminated. Trying to reconnect...', {duration: 30})
+      this.setState(() => ({ connectionError: true})) 
     })
   }
   
@@ -63,12 +75,14 @@ export default class DebuggerApp extends React.Component {
   render() {
     return (
       <div style={divStyle}>
+        
         <ListPane
           events={eventTypeFilter(this.state.events, this.state.searchText)}
           handlePauseChange={this.handlePauseChange}
           handleSearchFilter={this.handleSearchFilter}
           handleEventSelected={this.handleEventSelected}
           selectedEvent={this.state.selectedEvent}
+          onClick={() => toaster.notify('A simple general message')}
         />
         <DetailsPane selectedEvent={this.state.selectedEvent}/>
       </div>
