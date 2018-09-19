@@ -9,6 +9,6 @@ stream:
     - REDIS_HOST=redis
     - REDIS_PORT=6379
     - REDIS_CHANNEL=events
-    - EVENTS_PER_SECOND=100
+    - EVENTS_PER_SECOND=1
   links:
     - redis

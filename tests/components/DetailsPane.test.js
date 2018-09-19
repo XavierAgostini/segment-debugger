@@ -9,11 +9,6 @@ import testEvents from '../seed/seed'
 let wrapper, selectedEvent
 
 describe('<DetailsPane/>', () => {
-  test('should render DetailsPane as expected', () => {
-    selectedEvent = undefined
-    wrapper = shallow(<DetailsPane selectedEvent={selectedEvent}/>)
-    expect(wrapper).toMatchSnapshot()
-  })
   test('should show SelectEvent component on render', () => {
     selectedEvent = undefined
     wrapper = shallow(<DetailsPane selectedEvent={selectedEvent}/>)

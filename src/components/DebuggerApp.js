@@ -23,7 +23,7 @@ export default class DebuggerApp extends React.Component {
     connectionError: false,
     isPaused: false,
     selectedEvent: undefined,
-    events: new Array(100),
+    events: [],
     filteredEvents: [],
     searchText: ''
   }
@@ -39,7 +39,7 @@ export default class DebuggerApp extends React.Component {
           this.setState((prevState) => ({
             events: [JSON.parse(event.data)].concat(prevState.events)
           }))
-          if(this.state.events.length >= 50) this.state.events.length = 50
+          if(this.state.events.length >= 500) this.state.events.length = 500
         } 
       }
     })

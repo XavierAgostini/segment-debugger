@@ -14,7 +14,6 @@ beforeEach(() => {
 
 describe('<Event/>', () => {
   test('should render Event correctly', () => {
-    expect(wrapper).toMatchSnapshot()
     expect(wrapper.find('div.eventNameText').text()).toEqual('Notification Shown')
     expect(wrapper.find('div.eventType').text()).toEqual('track')
   })

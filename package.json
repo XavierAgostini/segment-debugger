@@ -9,7 +9,8 @@
     "dev-server": "webpack-dev-server",
     "prod": "export NODE_ENV=prod && node server/index.js",
     "test-env": "export NODE_ENV=test && node server/index.js",
-    "test": "jest /tests/components"
+    "test": "export NODE_ENV=test && jest /tests/components --verbose",
+    "test-dev": "jest /tests/components"
   },
   "author": "",
   "license": "ISC",
@@ -53,7 +54,6 @@
     "nodemon": "^1.18.4",
     "raf": "^3.4.0",
     "react-test-renderer": "^16.5.1",
-    "superagent": "^4.0.0-beta.5",
     "supertest": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
   }
