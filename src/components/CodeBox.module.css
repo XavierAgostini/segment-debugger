@@ -31,3 +31,6 @@
   font-size: 12px;
   line-height: 16px;
 }
+.syntaxHighlight {
+  color: rgb(33, 145, 97);
+}

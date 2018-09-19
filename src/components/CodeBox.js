@@ -2,6 +2,7 @@ import React from 'react'
 import { Pane } from 'evergreen-ui'
 import javascriptStringify from 'javascript-stringify'
 import './CodeBox.module.css'
+import moment from 'moment'
 
 const prettyEvent = (event) =>  {
   var string = `analytics.${event.type}(`
@@ -25,11 +26,22 @@ const prettyEvent = (event) =>  {
     string += javascriptStringify(event.traits, null, 2);
   }
   string+=')'
+  // add syntax highlighting
+  var regex = /('|")(.*[^'"]|)('|")/g
+  string = string.replace(regex, '<span class="syntaxHighlight">\'$2\'</span>');
   return string
 }
 
 const rawEvent = (event) => {
-  return JSON.stringify(event, null, 2);
+  var string =  JSON.stringify(event, null, 2)
+  // change timestamp number to human readable format
+  var regex2 = /"(sentAt|timestamp|receivedAt)":\s(\d+)(,\n  )/g
+  string = string.replace(regex2, '<time datetime=$1/></time>')
+  // highlight the value part of a key-value pair
+  var regex =  /(:\s")(.*)(")/g
+  string = string.replace(regex, ': <span class="syntaxHighlight">\"$2\"</span>')
+
+  return string
 }
 
 const generateLines = (objString) => {
@@ -57,10 +69,12 @@ export default class CodeBox extends React.Component {
             {this.props.showPretty && generateLines(prettyEvent(this.props.event))}
           </div>
           <pre className="codeStyling">
-            <code>
-              {!this.props.showPretty && rawEvent(this.props.event)}
-              {this.props.showPretty && prettyEvent(this.props.event)}
-            </code>
+         
+            
+            
+              {this.props.showPretty && <code dangerouslySetInnerHTML={{__html: prettyEvent(this.props.event)}}></code>}
+              {!this.props.showPretty && <code dangerouslySetInnerHTML={{__html: rawEvent(this.props.event)}}></code>}
+            
           </pre>
         </Pane>
       </div>

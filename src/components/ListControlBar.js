@@ -22,7 +22,7 @@ export default class ListControlBar extends React.Component {
 
   render() {
     return (
-      <div class="toolBar">
+      <div className="toolBar">
         <SegmentedControl
           width={160}
           height={40}
