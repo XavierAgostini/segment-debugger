@@ -14,7 +14,7 @@ const eventTypeFilter = (events, searchText) => {
   return events.filter(((event) => {
     const eventString = JSON.stringify(event).toLowerCase()
     // const eventTraits = event.traits ? JSON.stringify(event.traits).toLowerCase() : ''
-    return searchText.length === 0 || eventString.indexOf(searchText) > -1
+    return searchText.length === 0 || eventString.indexOf(searchText.toLowerCase()) > -1
   }))
 }
 
