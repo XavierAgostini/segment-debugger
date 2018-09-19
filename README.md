@@ -19,7 +19,7 @@ This implementation of the Segment Debugger was created using a React.js front-e
 
 - *Code Views:* The user can toggle between the 'pretty' and 'raw' event views. The pretty view shows what the event looks like if it was sent via the originating Segment library. Currently the pretty view will only show the event formatted as it would be if it was sent via analytics.js. Another feature that is missing is the syntax highlighting that is normally seen in the actual Segment debugger.
 
-![image](https://user-images.githubusercontent.com/7476817/45786362-fdefdd00-bc24-11e8-94cd-f77d46ae7da7.png)
+![image](https://user-images.githubusercontent.com/7476817/45786437-4909f000-bc25-11e8-97a2-533b4b35aaa4.png)
 
 The raw view shows the full JSON event payload:
 ![image](https://user-images.githubusercontent.com/7476817/45786303-b9644180-bc24-11e8-950c-9072a6d91a37.png)
