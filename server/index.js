@@ -12,6 +12,11 @@ const app = express()
 // serve static content to client
 app.use(express.static(publicPath));
 app.use(cors())
+
+app.get('/t', (req, res) => {
+  res.sendStatus(200)
+})
+
 app.get('/debugger-stream', (req, res) => {
   try {
     // need to alter Redis server url for running in a docker container
@@ -21,7 +26,7 @@ app.get('/debugger-stream', (req, res) => {
     }
     // create new subscription to redis server for each client that connects to server
     const subscriber = redis.createClient(redisUrl)
-
+    
     subscriber.subscribe('events')
     var messageCount = 0
 
@@ -30,7 +35,7 @@ app.get('/debugger-stream', (req, res) => {
       console.log(`redis err: ${err}`)
       res.write(`data: server-error\n\n`)
     })
-
+   
     // Send Sever Side Events (SSE) to connected client, by persisting the connection and writting new events to the response
     // To increase performance add in event sampling to ensure we don't overwelm the client application
     // Allow max 5 events per second
@@ -40,6 +45,7 @@ app.get('/debugger-stream', (req, res) => {
     }, 1000)
     // the eventsource response type requires events by sent in the following format: id, type, data. Each needs to be on a new line
     subscriber.on('message', (channel, message) => {
+      
       if (count < 5) {
         res.write(`id: ${messageCount}\n`)
         res.write('type: ${channel}\n')
@@ -47,6 +53,7 @@ app.get('/debugger-stream', (req, res) => {
         count++
       }
     })
+    
     // Set response headers to confifgure the event-steam
     res.writeHead(200, {
       'Content-Type': 'text/event-stream',
@@ -57,7 +64,7 @@ app.get('/debugger-stream', (req, res) => {
       'Access-Control-Allow-Headers': 'X-Requested-With'
     })
     res.write('\n')
-
+    
     // When client closes webpage, terminate Redis connection
     req.on("close", function() {
       subscriber.unsubscribe();
@@ -72,3 +79,5 @@ app.listen(port, (err) => {
   if (err) throw err
   console.log(`Server started on port ${port}`)
 })
+
+module.exports = app 

@@ -19,7 +19,6 @@ const eventTypeFilter = (events, searchText) => {
 }
 
 export default class DebuggerApp extends React.Component {
-
   state = {
     connectionError: false,
     isPaused: false,
