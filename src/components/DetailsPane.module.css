@@ -1,6 +1,6 @@
 .detailsWrapper {
   flex: 1;
-  /* overflow: auto; */
+  overflow: overlay;
   /* height: 500px; */
 }
 .detailsPaneWrapper {
