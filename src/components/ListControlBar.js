@@ -1,28 +1,7 @@
 import React from 'react'
 import { Button, SegmentedControl, SearchInput } from 'evergreen-ui'
+import './ListControlBar.module.css'
 
-const toolBarStyle = {
-  'WebKitBoxAlign': 'center',
-  alignItems: 'center',
-  borderBottom: '1px solid #d5dee6',
-  display: '-webkit-box',
-  display: '-ms-flexbox',
-  display: 'flex',
-  height: '72px',
-  padding: '0 16px',
-}
-const buttonWrapper = {
-  width: '160px',
-  display: 'flex',
-  margin: '0px -1px 0px 0px'
-}
-const searchBarWrapper = {
-  position: 'relative',
-  minWidth: '40px',
-  minHeight: '40px',
-  display: 'flex',
-  margin: '0px 16px'
-}
 export default class ListControlBar extends React.Component {
   state={
     options: [
@@ -43,7 +22,7 @@ export default class ListControlBar extends React.Component {
 
   render() {
     return (
-      <div style={toolBarStyle}>
+      <div class="toolBar">
         <SegmentedControl
           width={160}
           height={40}
@@ -55,7 +34,8 @@ export default class ListControlBar extends React.Component {
           name="searchBox"
           marginX='16px'
           placeholder='Type to search...'
-          width='360px'
+          display="flex"
+          flex="1 1 0%"
           height={40}
           onChange={this.handleSearchChange}
         />

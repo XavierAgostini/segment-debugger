@@ -1,0 +1,10 @@
+input[name="searchBox"] {
+  flex: 1 1 0%;
+}
+.toolBar {
+  align-items: center;
+  border-bottom: 1px solid #d5dee6;
+  display: flex;
+  height: 72px;
+  padding: 0 16px;
+}
