@@ -51,3 +51,10 @@ I used Jest to unit test the React app. Each component has its own test file whe
 ## Ideal Production State
 
 As the Redis event stream is serving events at a constant rate, the debugger does not emulate real life behavior. In real life depending on the Segment source, events can arrive in various quantities over time. Having a strict sampling rate of 5 events/s is not ideal in all cases as low-volume sources could potentially miss out on a series of events that are sent in a short duration. Ideally a sampling rate should be used when a large number of events/s are being sent consistently to Segment. Events should be buffered to ensure if a spike does occurr events can be sent to the debugger at a later time. A cache of events should also be kept for when the debugger loads, so the debugger does not appear empty on load. This could create customer confusion, as they might think Segment lost their events or that the older events never arrived.
+
+## Time Spent
+Express API - 2 hours
+React App - 15 hours
+Unit Testing - 5 hours (had to take time to learn how to unit test React apps using Jest)
+Documentation - 1 hour
+Total: 23 hours
