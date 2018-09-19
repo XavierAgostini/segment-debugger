@@ -17,7 +17,7 @@ This implementation of the Segment Debugger was created using a React.js front-e
 
 - *Pause/Live:* Pressing the 'Pause' button will result in no new events being added to the debugger event list. Once the 'Live' button is pressed, events will resume appearing in the debugger.
 
-- *Code Views:* The user can toggle between the 'pretty' and 'raw' event views. The pretty view shows what the event looks like if it was sent via the originating Segment library. Currently the pretty view will only show the event formatted as it would be if it was sent via analytics.js. Another feature that is missing is the syntax highlighting that is normally seen in the actual Segment debugger.
+- *Code Views:* The user can toggle between the 'pretty' and 'raw' event views. The pretty view shows what the event looks like if it was sent via the originating Segment library. Currently the pretty view will only show the event formatted as it would be if it was sent via analytics.js.
 
 ![image](https://user-images.githubusercontent.com/7476817/45786437-4909f000-bc25-11e8-97a2-533b4b35aaa4.png)
 
