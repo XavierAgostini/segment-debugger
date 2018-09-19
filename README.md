@@ -8,6 +8,8 @@
 4. `make`
 5. Open your browser to localhost:5000
 
+![alt text](https://cl.ly/b44fc3bb50d6)
+
 ## Architecture
 
 The debugger was created using React. It's served from a Express app, and the events are delivered via an event stream. The event stream is a p. The server sends server-side-events (SSE) to the client by maintaining a persitant connection. The Browser can use the [Event Source](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) interface. This can keep a persistant HTTP connection to a server allowing the server to send a stream of events in a 'text/event-stream' format. 
