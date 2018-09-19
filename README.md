@@ -7,7 +7,7 @@
 3. `make`
 4. Open your browser to [localhost:5000](http://localhost:5000)
 
-![image](https://user-images.githubusercontent.com/7476817/45731723-caae3f00-bb8d-11e8-86b3-060c45737dae.png)
+![image](https://user-images.githubusercontent.com/7476817/45786389-1bbd4200-bc25-11e8-83a8-200ddee8c6d6.png)
 
 ## Architecture
 
@@ -19,13 +19,13 @@ This implementation of the Segment Debugger was created using a React.js front-e
 
 - *Code Views:* The user can toggle between the 'pretty' and 'raw' event views. The pretty view shows what the event looks like if it was sent via the originating Segment library. Currently the pretty view will only show the event formatted as it would be if it was sent via analytics.js. Another feature that is missing is the syntax highlighting that is normally seen in the actual Segment debugger.
 
-![image](https://user-images.githubusercontent.com/7476817/45732411-01d21f80-bb91-11e8-8076-2437f574ef8e.png)
+![image](https://user-images.githubusercontent.com/7476817/45786437-4909f000-bc25-11e8-97a2-533b4b35aaa4.png)
 
 The raw view shows the full JSON event payload:
-![image](https://user-images.githubusercontent.com/7476817/45732411-01d21f80-bb91-11e8-8076-2437f574ef8e.png)
+![image](https://user-images.githubusercontent.com/7476817/45786303-b9644180-bc24-11e8-950c-9072a6d91a37.png)
 
 - *Filter:*  The search box will filter events based on the full event payload. Events will be dynamically filtered based on what is being typed. When the text is removed the full list of events is rerendered to the screen. With more time I would add the 'Advanced' filter functionality.
-![image](https://user-images.githubusercontent.com/7476817/45732442-2cbc7380-bb91-11e8-9fd8-70534dd98d08.png)
+![image](https://user-images.githubusercontent.com/7476817/45786342-e4e72c00-bc24-11e8-8491-6fe98c8576bb.png)
 
 ## Performance Considerations
 
