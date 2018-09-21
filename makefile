@@ -26,7 +26,7 @@ stop:
 	docker-compose -f docker-compose.prod.yml down
 
 prod: ;@echo "Starting ${PROJECT}....."; \
-	# make build
+	make build
 	# node config/config.js
 	make build
 	docker-compose -f docker-compose.prod.yml build
