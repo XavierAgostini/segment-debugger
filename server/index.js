@@ -9,12 +9,39 @@ const publicPath = path.join(__dirname, '../public');
 const env = process.env.NODE_ENV || 'development'
 const app = express()
 
+const counters = require('./counters')
+
 // serve static content to client
 app.use(express.static(publicPath));
 app.use(cors())
 
 app.get('/t', (req, res) => {
   res.sendStatus(200)
+})
+
+
+app.get('/counter/:event_name/:date_start/:date_end', (req, res) => {
+  // logic to validate paramaters
+  let event_name = req.params.event_name
+  let date_start = req.params.date_start
+  let date_end = req.params.date_end
+
+  var count
+
+  try {
+    console.log(counters[event_name][date_end], counters[event_name][date_start])
+    console.log(counters[event_name])
+    console.log(counters)
+    if (counters[event_name][date_start]) {
+      count = counters[event_name][date_end] - counters[event_name][date_start]
+    } else {
+      count = counters[event_name][date_end]
+    }
+  } catch (e) {
+    count = 0
+  }
+  // res.json(counters)
+  res.json({event_name, date_start, date_end, count})
 })
 
 app.get('/debugger-stream', (req, res) => {
